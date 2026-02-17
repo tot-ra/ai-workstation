@@ -36,7 +36,7 @@ install_brew_cask "obs"
 install_brew_cask "spotify"
 
 log_info "Installing window management..."
-install_brew_cask "rectangle"
+brew install --cask nikitabobko/tap/aerospace
 
 log_info "Installing development tools..."
 install_brew_cask "goland"
