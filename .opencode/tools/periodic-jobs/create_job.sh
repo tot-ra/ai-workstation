@@ -40,10 +40,10 @@ Description=OpenCode Job: ${JOB_NAME}
 
 [Service]
 Type=oneshot
-WorkingDirectory=/home/gratheon/git/workstation
-ExecStart=/bin/bash -c '/home/gratheon/.opencode/bin/opencode run -- "${PROMPT}"'
-StandardOutput=append:/home/gratheon/.config/opencode/logs/${JOB_NAME}.log
-StandardError=append:/home/gratheon/.config/opencode/logs/${JOB_NAME}.log
+WorkingDirectory=%h/git/ai-workstation
+ExecStart=/bin/bash -c '%h/.local/bin/opencode run -- "${PROMPT}"'
+StandardOutput=append:%h/.config/opencode/logs/${JOB_NAME}.log
+StandardError=append:%h/.config/opencode/logs/${JOB_NAME}.log
 
 [Install]
 WantedBy=default.target

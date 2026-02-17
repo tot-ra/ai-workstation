@@ -133,36 +133,34 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "LM Studio (local)",
       "options": {
-        "baseURL": "http://127.0.0.1:1234/v1"
+        "baseURL": "http://artjoms-mac-mini:1234/v1",
       },
       "models": {
-        "deepseek/deepseek-r1-0528-qwen3-8b":{
-            "name": "deepseek/deepseek-r1-0528-qwen3-8b"
-          },
-        "qwen/qwen3-vl-4b": {
-            "name":"qwen3-vl-4b"
-          },
-        "openai/gpt-oss-20b":{
-            "name":"openai/gpt-oss-20b"
-          },
-        "qwen/qwen3-vl-8b": {
-            "name": "qwen/qwen3-vl-8b"
-          },
-        "zai-org/glm-4.6v-flash": {
-          "name": "GLM-4.6-flash"
+        "mistralai/magistral-small-2509": {
+          "name": "mistralai/magistral-small-2509",
         },
-      }
-    }
+
+        "deepseek/deepseek-r1-0528-qwen3-8b": {
+          "name": "deepseek/deepseek-r1-0528-qwen3-8b",
+        },
+        "qwen/qwen3-vl-4b": {
+          "name": "qwen3-vl-4b",
+        },
+        "openai/gpt-oss-20b": {
+          "name": "openai/gpt-oss-20b",
+        },
+        "qwen/qwen3-vl-8b": {
+          "name": "qwen/qwen3-vl-8b",
+        },
+        "zai-org/glm-4.6v-flash": {
+          "name": "GLM-4.6-flash",
+        },
+      },
+    },
   },
 
   // ============ MCP СЕРВЕРЫ ============
   "mcp": {
-    "context7-library-docs": {
-      "type": "local",
-      "command": ["npx", "-y", "@upstash/context7-mcp@latest"],
-      "enabled": false,
-      "timeout": 60000,
-    },
     "github": {
       "type": "local",
       "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
@@ -190,24 +188,24 @@
         "--browserUrl",
         "http://127.0.0.1:9222",
       ],
-      "enabled": true,
-      "timeout": 60000,
-    },
-    "mcp_server_mysql": {
-      "type": "local",
-      "command": ["npx", "-y", "@benborla29/mcp-server-mysql"],
-      "environment": {
-        "MYSQL_HOST": "127.0.0.1",
-        "MYSQL_PORT": "5100",
-        "MYSQL_USER": "root",
-        "MYSQL_PASS": "test",
-        "ALLOW_INSERT_OPERATION": "false",
-        "ALLOW_UPDATE_OPERATION": "false",
-        "ALLOW_DELETE_OPERATION": "false",
-      },
       "enabled": false,
       "timeout": 60000,
     },
+    //  "mcp_server_mysql": {
+    //    "type": "local",
+    //    "command": ["npx", "-y", "@benborla29/mcp-server-mysql"],
+    //    "environment": {
+    //      "MYSQL_HOST": "127.0.0.1",
+    //      "MYSQL_PORT": "5100",
+    //      "MYSQL_USER": "root",
+    //      "MYSQL_PASS": "test",
+    //      "ALLOW_INSERT_OPERATION": "false",
+    //     "ALLOW_UPDATE_OPERATION": "false",
+    //      "ALLOW_DELETE_OPERATION": "false",
+    //     },
+    //      "enabled": false,
+    //      "timeout": 60000,
+    //    },
     "x-twitter": {
       "type": "local",
       "command": ["npx", "-y", "@mbelinky/x-mcp-server"],

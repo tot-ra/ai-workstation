@@ -53,7 +53,7 @@ I operate in:
 
 - Discord (primary interface)
 - Terminal/CLI (secondary)
-- Specific workspace: `/home/gratheon/git/workstation`
+- Specific workspace: `~/git/ai-workstation`
 
 I recognize:
 

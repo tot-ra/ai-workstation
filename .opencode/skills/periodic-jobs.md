@@ -62,10 +62,10 @@ Description=OpenCode Job: my-task
 
 [Service]
 Type=oneshot
-WorkingDirectory=/home/gratheon/git/project
-ExecStart=/bin/bash -c '/home/gratheon/.opencode/bin/opencode run -- "Ваш промпт"'
-StandardOutput=append:/home/gratheon/.config/opencode/logs/my-task.log
-StandardError=append:/home/gratheon/.config/opencode/logs/my-task.log
+WorkingDirectory=%h/git/project
+ExecStart=/bin/bash -c '%h/.local/bin/opencode run -- "Ваш промпт"'
+StandardOutput=append:%h/.config/opencode/logs/my-task.log
+StandardError=append:%h/.config/opencode/logs/my-task.log
 
 [Install]
 WantedBy=default.target
@@ -89,7 +89,7 @@ systemctl --user restart opencode-job-<name>.timer
 
 - **Именование**: `daily-backup`, `weekly-report` вместо `job1`, `task2`
 - **Логи**: Всегда указывайте `StandardOutput/Error` с путём к логу
-- **Пути**: Используйте абсолютные пути (`/home/gratheon/...`, не `~/...`)
+- **Пути**: В systemd используйте `%h` для home директории (например `%h/git/project`)
 - **Промпты**: Для сложных промптов используйте `ExecStart=/bin/bash -c '...'`
 - **Скрипты**: Для сложной логики создавайте отдельный `.sh` скрипт в `~/.config/opencode/jobs/`
 
@@ -99,7 +99,7 @@ systemctl --user restart opencode-job-<name>.timer
 
 ```bash
 cd .opencode/tools/periodic-jobs
-./create_job_with_script.sh my-task "0 9 * * *" /home/gratheon/project "*.md"
+./create_job_with_script.sh my-task "0 9 * * *" ~/project "*.md"
 ```
 
 Или используй вспомогательные скрипты:

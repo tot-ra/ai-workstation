@@ -11,7 +11,7 @@ FILE_PATTERN="$4"
 
 if [ -z "$JOB_NAME" ] || [ -z "$SCHEDULE" ] || [ -z "$WORK_DIR" ] || [ -z "$FILE_PATTERN" ]; then
     echo "Usage: $0 <job_name> <schedule_cron> <work_dir> <file_pattern>"
-    echo "Example: $0 analyze-md '0 9 * * *' /home/gratheon/project '*.md'"
+    echo "Example: $0 analyze-md '0 9 * * *' ~/project '*.md'"
     exit 1
 fi
 
@@ -50,7 +50,7 @@ PROMPT=\$(cat <<EOF
 EOF
 )
 
-/home/gratheon/.opencode/bin/opencode run -- "\$PROMPT"
+\$HOME/.local/bin/opencode run -- "\$PROMPT"
 SCRIPT
 
 chmod +x ~/.config/opencode/jobs/${JOB_NAME}.sh
@@ -62,9 +62,9 @@ Description=OpenCode Job: ${JOB_NAME}
 
 [Service]
 Type=oneshot
-ExecStart=/home/gratheon/.config/opencode/jobs/${JOB_NAME}.sh
-StandardOutput=append:/home/gratheon/.config/opencode/logs/${JOB_NAME}.log
-StandardError=append:/home/gratheon/.config/opencode/logs/${JOB_NAME}.log
+ExecStart=%h/.config/opencode/jobs/${JOB_NAME}.sh
+StandardOutput=append:%h/.config/opencode/logs/${JOB_NAME}.log
+StandardError=append:%h/.config/opencode/logs/${JOB_NAME}.log
 
 [Install]
 WantedBy=default.target

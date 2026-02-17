@@ -127,7 +127,7 @@ When running scheduled jobs (like the weekly Sentry digest):
 
 ## Migration Notes
 This replaces the custom TypeScript script previously located at:
-\`/home/gratheon/git/workstation/.opencode/tools/sentry-digest/\`
+`~/.opencode/tools/sentry-digest/`
 
 The MCP approach provides:
 - Pre-built, maintained tools

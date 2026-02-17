@@ -4,10 +4,10 @@
 # This script simply delegates the scheduling logic to the OpenCode agent using a single MD file.
 
 # Binary path
-OPCODE_BIN="/home/gratheon/.opencode/bin/opencode"
+OPCODE_BIN="$HOME/.local/bin/opencode"
 
 # MD file containing the scheduling logic
-SCHEDULER_FILE="/home/gratheon/git/mind/agent/jobs/unified-scheduler.md"
+SCHEDULER_FILE="$HOME/git/mind/agent/jobs/unified-scheduler.md"
 
 echo "[$(date +%Y-%m-%dT%H:%M:%S)] Starting unified scheduler. Delegating to agent with $SCHEDULER_FILE."
 
