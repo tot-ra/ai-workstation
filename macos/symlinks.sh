@@ -36,6 +36,9 @@ link_config "$HOME/git/ai-workstation/.config/opencode" "$HOME/.config/opencode"
 # Opencode rules and skills directory (referenced by opencode.jsonc)
 link_config "$HOME/git/ai-workstation/.opencode" "$HOME/.opencode"
 
+# AeroSpace window manager config
+link_config "$HOME/git/ai-workstation/.config/aerospace.toml" "$HOME/.aerospace.toml"
+
 echo "Symlinks created successfully"
 echo ""
 echo "Note: Make sure to run this script on each machine where you want to use these configs."
