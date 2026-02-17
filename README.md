@@ -50,6 +50,8 @@ Karabiner-Elements enables custom keyboard shortcuts for Windows/Linux compatibi
 2. Grant permission to **karabiner_grabber** and **karabiner_observer**
 3. You may need to restart your Mac for changes to take effect
 
+4. In karabiner-elements settings -> virtual keyboard, change your keyboard to ANSI (to have ~ character working correctly)
+
 **Note:** These shortcuts require a keyboard with an Insert key (common on external/Windows keyboards). If using a Mac keyboard without Insert, you can remap another key in Karabiner's UI.
 
 #### Window management shortcuts (with Rectangle)
