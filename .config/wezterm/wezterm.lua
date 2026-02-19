@@ -95,16 +95,45 @@ config.window_frame = {
 	font_size = 14.0,
 	-- The overall background color of the tab bar when
 	-- the window is focused
-	active_titlebar_bg = "#333333",
+	active_titlebar_bg = "#2b5278",
 	-- The overall background color of the tab bar when
 	-- the window is not focused
-	inactive_titlebar_bg = "#333333",
+	inactive_titlebar_bg = "#1a1a1a",
 }
 
 config.colors = {
 	tab_bar = {
 		-- The color of the inactive tab bar edge/divider
 		inactive_tab_edge = "#575757",
+		
+		-- Active tab colors
+		active_tab = {
+			bg_color = "#2b5278",
+			fg_color = "#ffffff",
+		},
+		
+		-- Inactive tab colors
+		inactive_tab = {
+			bg_color = "#1a1a1a",
+			fg_color = "#808080",
+		},
+		
+		-- Inactive tab hover colors
+		inactive_tab_hover = {
+			bg_color = "#3b3052",
+			fg_color = "#909090",
+		},
+		
+		-- New tab button
+		new_tab = {
+			bg_color = "#1a1a1a",
+			fg_color = "#808080",
+		},
+		
+		new_tab_hover = {
+			bg_color = "#3b3052",
+			fg_color = "#909090",
+		},
 	},
 }
 
