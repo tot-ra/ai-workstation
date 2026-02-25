@@ -14,3 +14,7 @@ install_brew_package "mysql-client@${MYSQL_CLIENT_VERSION}"
 brew link --overwrite "mysql-client@${MYSQL_CLIENT_VERSION}" --force 2>/dev/null || true
 
 log_success "Database tools installation completed!"
+
+# postgres psql
+brew install libpq
+echo 'export PATH="/opt/homebrew/opt/libpq/bin:$PATH"' >>~/.zshrc
