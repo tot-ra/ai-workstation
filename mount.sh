@@ -41,7 +41,7 @@ alias ls="eza --long --header --icons --git --octal-permissions --no-user --no-p
 alias sl="screen -ls"
 
 alias cat="bat"
+alias encode_video="ffmpeg -i input.mov -c:v libx265 -crf 32 -preset slow -c:a aac -b:a 96k -movflags +faststart output.mp4"
 
 #alias python="$(brew --prefix python@3.11)/libexec/bin/python"
 
-source alias ai=~/ai-cli/ai
