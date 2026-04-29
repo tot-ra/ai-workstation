@@ -5,6 +5,8 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 log_info "Starting UI applications installation..."
 
+install_brew_cask "telegram"
+
 log_info "Installing terminal and development tools..."
 install_brew_cask "wezterm"
 
@@ -18,6 +20,7 @@ fi
 
 install_brew_cask "rubymine"
 install_brew_cask "goland"
+install_brew_cask "codex-app"
 
 log_info "Installing productivity tools..."
 install_brew_cask "bitwarden"
@@ -43,8 +46,7 @@ install_brew_cask "spotify"
 log_info "Installing window management..."
 brew install --cask nikitabobko/tap/aerospace
 
-log_info "Installing development tools..."
-install_brew_cask "goland"
+log_info "Installing extra development tools..."
 install_brew_package "bruno"
 install_brew_cask "cyberduck"
 
