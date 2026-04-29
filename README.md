@@ -50,7 +50,18 @@ git config --global pull.rebase false
 - clone this repo
 
 ```bash
-git clone git@github.com:tot-ra/ai-workstation.git
+git clone git@github.com:tot-ra/ai-workstation.git ~/git/ai-workstation
+cd ~/git/ai-workstation/macos/
+./install.sh
+
+
+
+echo "source ~/git/ai-workstation/mount.sh" >> ~/.zshrc
+
+# link nvim and tmux configs to be linked to github repo
+ln -s ~/git/ai-workstation/.tmux.conf ~/.tmux.conf
+ln -s ~/git/ai-workstation/.config/nvim ~/.config/nvim
+
 ```
 
 ### TMux setup
@@ -128,24 +139,6 @@ Others need manual installation:
   - Update iTerm and IDEs to use it to see nice icons
   - Use ligatures
 
-### Installation
-
-```bash
-chmod +x install.sh
-
-# Optional: Backup existing configs before installation
-./backup.sh
-
-git clone git@github.com:tot-ra/ai-workstation.git ~/git/ai-workstation
-~/git/ai-workstation/install.sh
-echo "source ~/git/ai-workstation/mount.sh" >> ~/.zshrc
-
-# link nvim and tmux configs to be linked to github repo
-ln -s ~/git/ai-workstation/.tmux.conf ~/.tmux.conf
-ln -s ~/git/ai-workstation/.config/nvim ~/.config/nvim
-
-# now add this key to github --> https://github.com/settings/ssh/new
-```
 
 **Features:**
 - ✅ Idempotent - safe to run multiple times
