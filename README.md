@@ -32,6 +32,12 @@ https://www.google.com/chrome/
 
 - run `git` from terminal to trigger XCode installation
 
+Manually install apps:
+
+- Goland, RubyMine
+- [Postman](https://www.postman.com/downloads/)
+
+
 #### Generate private key
 ```
 ssh-keygen -t rsa -b 4096 -C "artkurapov@gmail.com
@@ -123,15 +129,6 @@ To install, run: `./macos/install-ui-apps.sh`
 ./macos/install-karabiner.sh  # Install Karabiner-Elements for custom keyboard shortcuts
 ```
 
-Others need manual installation:
-
-- Goland
-- Docker4Mac
-- [Postman](https://www.postman.com/downloads/)
-- [OpenVPN](https://openvpn.net/downloads/openvpn-connect-latest.dmg)
-- Discord
-- [Monocle](https://monokle.io/download) to access k8s logs
-- Microsoft TODO
 
 ### Fonts
 
