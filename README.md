@@ -47,7 +47,11 @@ git config --global user.email "artkurapov@gmail.com"
 git config --global pull.rebase false
 ```
 
+- clone this repo
 
+```bash
+git clone git@github.com:tot-ra/ai-workstation.git
+```
 
 ### TMux setup
 run tmux and install it:
