@@ -8,7 +8,8 @@ source_versions
 
 RUBY_VERSION="${RUBY_VERSION:-3.2.3}"
 ASDF_SHIMS_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
-ASDF_SCRIPT="$(brew --prefix asdf)/libexec/asdf.sh"
+ASDF_PREFIX="$(brew --prefix asdf)"
+ASDF_SCRIPT="$ASDF_PREFIX/libexec/asdf.sh"
 
 log_info "Starting Ruby installation..."
 
@@ -23,31 +24,45 @@ install_brew_package "automake"
 install_brew_package "libtool"
 
 if ! grep -Fq "$ASDF_SHIMS_DIR" ~/.zshrc 2>/dev/null; then
-    echo "export PATH=\"$ASDF_SHIMS_DIR:\$PATH\"" >> ~/.zshrc
-    log_info "Added asdf shims to .zshrc"
+  echo "export PATH=\"$ASDF_SHIMS_DIR:\$PATH\"" >>~/.zshrc
+  log_info "Added asdf shims to .zshrc"
 fi
 
-if ! grep -Fq "$ASDF_SCRIPT" ~/.zshrc 2>/dev/null; then
-    echo ". \"$ASDF_SCRIPT\"" >> ~/.zshrc
+if [ -f "$ASDF_SCRIPT" ]; then
+  if ! grep -Fq "$ASDF_SCRIPT" ~/.zshrc 2>/dev/null; then
+    echo ". \"$ASDF_SCRIPT\"" >>~/.zshrc
     log_info "Added asdf init to .zshrc"
+  fi
+else
+  log_skip "asdf shell init script not found; using asdf executable"
 fi
 
+if ! command_exists asdf; then
+  export PATH="$ASDF_PREFIX/bin:$PATH"
+fi
 export PATH="$ASDF_SHIMS_DIR:$PATH"
-# shellcheck disable=SC1090
-. "$ASDF_SCRIPT"
+if [ -f "$ASDF_SCRIPT" ]; then
+  # shellcheck disable=SC1090
+  . "$ASDF_SCRIPT"
+fi
+
+if ! command_exists asdf; then
+  log_error "asdf command not found after installation"
+  exit 1
+fi
 
 if ! asdf plugin list | grep -qx 'ruby'; then
-    log_info "Adding asdf ruby plugin..."
-    asdf plugin add ruby
+  log_info "Adding asdf ruby plugin..."
+  asdf plugin add ruby
 else
-    log_skip "asdf ruby plugin already installed"
+  log_skip "asdf ruby plugin already installed"
 fi
 
-if ! asdf list ruby 2>/dev/null | tr -d ' ' | grep -qx "$RUBY_VERSION"; then
-    log_info "Installing Ruby $RUBY_VERSION..."
-    RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" asdf install ruby "$RUBY_VERSION"
+if ! asdf list ruby 2>/dev/null | tr -d ' *' | grep -qx "$RUBY_VERSION"; then
+  log_info "Installing Ruby $RUBY_VERSION..."
+  RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)" asdf install ruby "$RUBY_VERSION"
 else
-    log_skip "Ruby $RUBY_VERSION already installed"
+  log_skip "Ruby $RUBY_VERSION already installed"
 fi
 
 log_info "Setting Ruby $RUBY_VERSION as global default..."
