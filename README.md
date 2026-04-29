@@ -3,8 +3,9 @@ This is an opinionated dev setup for Mac and Ubuntu.
 
 <img width="1920" alt="nvim-tmux" src="https://github.com/user-attachments/assets/9816d8bf-22be-43be-92f4-95d0a402edf6">
 
-### MacOS settings setup
+### Setup MacOS settings
 
+- Mouse - turn off natural scrolling (yuck)
 - Keyboard -> Input Sources -> change language to CMD + Space
 - Keyboard -> Spotlight - change to CMD + Shift + Space
 - Keyboard -> Function keys -> Turn on "Use F1.. as function keys"
@@ -21,6 +22,32 @@ This is an opinionated dev setup for Mac and Ubuntu.
     - Battery -> Show Percentage
     - Clock(Date) -> Display time with seconds
     - Weather -> Show in menu
+
+### Chrome installation
+https://www.google.com/chrome/
+
+
+
+### Installation
+
+- run `git` from terminal to trigger XCode installation
+
+#### Generate private key
+```
+ssh-keygen -t rsa -b 4096 -C "artkurapov@gmail.com
+cat ~/.ssh/id_rsa.pub
+open "https://github.com/settings/keys"
+```
+
+#### Configure git client
+
+```bash
+git config --global user.name "Artjom Kurapov"
+git config --global user.email "artkurapov@gmail.com"
+git config --global pull.rebase false
+```
+
+
 
 ### TMux setup
 run tmux and install it:
@@ -96,19 +123,6 @@ Others need manual installation:
 - Install [Jetbrains Mono Nerdfont](https://www.nerdfonts.com/font-downloads) or original [Jetbrains Mono](https://www.jetbrains.com/lp/mono/)
   - Update iTerm and IDEs to use it to see nice icons
   - Use ligatures
-
-### Git settings
-
-```bash
-git config --global user.name "Artjom Kurapov"
-git config --global user.email "artkurapov@gmail.com"
-git config --global pull.rebase false
-
-# generate key for github
-ssh-keygen -t rsa -b 4096 -C "artkurapov@gmail.com"
-open "https://github.com/settings/keys"
-cat ~/.ssh/id_rsa.pub
-```
 
 ### Installation
 
