@@ -34,7 +34,8 @@ https://www.google.com/chrome/
 
 Manually install apps:
 
-- Goland, RubyMine
+- Goland
+- [RubyMine](https://download.jetbrains.com/ruby/RubyMine-2026.1.1-aarch64.dmg)
 - [Postman](https://www.postman.com/downloads/)
 
 
