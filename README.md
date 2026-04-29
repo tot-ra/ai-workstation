@@ -3,37 +3,13 @@ This is an opinionated dev setup for Mac and Ubuntu.
 
 <img width="1920" alt="nvim-tmux" src="https://github.com/user-attachments/assets/9816d8bf-22be-43be-92f4-95d0a402edf6">
 
-### Setup MacOS settings
-
-- Mouse - turn off natural scrolling (yuck)
-- Keyboard -> Input Sources -> change language to CMD + Space
-- Keyboard -> Spotlight - change to CMD + Shift + Space
-- Keyboard -> Function keys -> Turn on "Use F1.. as function keys"
-- Keyboard -> Mission control -> turn off `Mission Control` and `Application windows`, `Show Desktop`
-  - change `move left/right a space` to use CMD instead of CTRL
-    (so that tmux leader key would work fine)
-- Mouse -> disable natural scrolling
-- Keyboard -> Key Repeat -> Fast
-- Keyboard -> Delay Until Repeat -> Short
-- Keyboard -> Text Input -> Disable most things
-- Keyboard -> Accessibility -> Disable VoiceOver
-- Control Center (aka Menu Bar)
-    - Sound -> Always Show in Menu Bar
-    - Battery -> Show Percentage
-    - Clock(Date) -> Display time with seconds
-    - Weather -> Show in menu
-
-### Chrome installation
-https://www.google.com/chrome/
-
-
-
 ### Installation
 
 - run `git` from terminal to trigger XCode installation
 
 Manually install apps:
 
+- [Chrome](https://www.google.com/chrome/)
 - Goland
 - [RubyMine](https://download.jetbrains.com/ruby/RubyMine-2026.1.1-aarch64.dmg)
 - [Postman](https://www.postman.com/downloads/)
@@ -54,22 +30,41 @@ git config --global user.email "artkurapov@gmail.com"
 git config --global pull.rebase false
 ```
 
-- clone this repo
+#### Clone repo and install
 
 ```bash
 git clone git@github.com:tot-ra/ai-workstation.git ~/git/ai-workstation
 cd ~/git/ai-workstation/macos/
 ./install.sh
 
-
-
-echo "source ~/git/ai-workstation/mount.sh" >> ~/.zshrc
-
 # link nvim and tmux configs to be linked to github repo
 ln -s ~/git/ai-workstation/.tmux.conf ~/.tmux.conf
 ln -s ~/git/ai-workstation/.config/nvim ~/.config/nvim
 
 ```
+
+
+### Setup MacOS settings
+
+- Mouse - turn off natural scrolling (yuck)
+- Keyboard -> Input Sources -> change language to CMD + Space
+- Keyboard -> Spotlight - change to CMD + Shift + Space
+- Keyboard -> Function keys -> Turn on "Use F1.. as function keys"
+- Keyboard -> Mission control -> turn off `Mission Control` and `Application windows`, `Show Desktop`
+  - change `move left/right a space` to use CMD instead of CTRL
+    (so that tmux leader key would work fine)
+- Mouse -> disable natural scrolling
+- Keyboard -> Key Repeat -> Fast
+- Keyboard -> Delay Until Repeat -> Short
+- Keyboard -> Text Input -> Disable most things
+- Keyboard -> Accessibility -> Disable VoiceOver
+- Control Center (aka Menu Bar)
+    - Sound -> Always Show in Menu Bar
+    - Battery -> Show Percentage
+    - Clock(Date) -> Display time with seconds
+    - Weather -> Show in menu
+
+
 
 ### TMux setup
 run tmux and install it:
