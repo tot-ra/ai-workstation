@@ -7,12 +7,17 @@ log_info "Starting UI applications installation..."
 
 log_info "Installing terminal and development tools..."
 install_brew_cask "wezterm"
+
+log_info "Installing IDEs"
 install_brew_cask "visual-studio-code"
 
 if [ -x "./install-vscode.sh" ]; then
   log_info "Installing VSCode extensions..."
   ./install-vscode.sh
 fi
+
+install_brew_cask "rubymine"
+install_brew_cask "goland"
 
 log_info "Installing productivity tools..."
 install_brew_cask "bitwarden"

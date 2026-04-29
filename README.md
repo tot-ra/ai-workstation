@@ -10,8 +10,6 @@ This is an opinionated dev setup for Mac and Ubuntu.
 Manually install apps:
 
 - [Chrome](https://www.google.com/chrome/)
-- Goland
-- [RubyMine](https://download.jetbrains.com/ruby/RubyMine-2026.1.1-aarch64.dmg)
 - [Postman](https://www.postman.com/downloads/)
 
 
