@@ -11,12 +11,12 @@ brew update
 brew upgrade
 
 if ! command_exists zsh; then
-    log_info "Installing zsh and oh-my-zsh..."
-    sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    compaudit | xargs chmod g-w,o-w
-    log_success "zsh installed"
+  log_info "Installing zsh and oh-my-zsh..."
+  sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  compaudit | xargs chmod g-w,o-w
+  log_success "zsh installed"
 else
-    log_skip "zsh already installed"
+  log_skip "zsh already installed"
 fi
 
 log_info "Installing fonts..."
@@ -27,19 +27,19 @@ install_brew_package "font-jetbrains-mono-nerd-font"
 log_info "Installing powerlevel10k..."
 install_brew_package "powerlevel10k"
 if ! grep -q "powerlevel10k.zsh-theme" ~/.zshrc 2>/dev/null; then
-    echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-    log_info "Added powerlevel10k to .zshrc"
+  echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+  log_info "Added powerlevel10k to .zshrc"
 fi
 
 log_info "Installing zsh plugins..."
 install_brew_package "zsh-autosuggestions"
 if ! grep -q "zsh-autosuggestions.zsh" ~/.zshrc 2>/dev/null; then
-    echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >>~/.zshrc
+  echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >>~/.zshrc
 fi
 
 install_brew_package "zsh-syntax-highlighting"
 if ! grep -q "zsh-syntax-highlighting.zsh" ~/.zshrc 2>/dev/null; then
-    echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>~/.zshrc
+  echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>~/.zshrc
 fi
 
 log_info "Installing file managers..."
@@ -70,8 +70,8 @@ install_brew_package "htop"
 install_brew_package "procs"
 
 if ! sudo grep -q "NOPASSWD.*procs" /etc/sudoers 2>/dev/null; then
-    sudo tee -a /etc/sudoers <<<"$USER ALL= NOPASSWD: /usr/local/bin/procs" >/dev/null
-    log_info "Added procs to sudoers"
+  sudo tee -a /etc/sudoers <<<"$USER ALL= NOPASSWD: /usr/local/bin/procs" >/dev/null
+  log_info "Added procs to sudoers"
 fi
 
 log_info "Installing text processing tools..."
@@ -82,8 +82,12 @@ install_brew_package "noahgorstein/tap/jqp"
 
 log_info "Installing networking tools..."
 install_brew_package "wget"
+install_brew_package "curl"
 install_brew_package "telnet"
 install_brew_package "ncdu"
 install_brew_package "tldr"
+
+## make sure to use latest curl
+echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >>~/.zshrc
 
 log_success "CLI tools installation completed!"
