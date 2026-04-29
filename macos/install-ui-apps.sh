@@ -20,7 +20,6 @@ fi
 
 install_brew_cask "rubymine"
 install_brew_cask "goland"
-install_brew_cask "codex-app"
 
 log_info "Installing productivity tools..."
 install_brew_cask "bitwarden"

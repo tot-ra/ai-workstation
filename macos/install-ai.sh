@@ -5,6 +5,8 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 log_info "Starting AI tools installation..."
 
+install_brew_cask "codex-app"
+
 install_brew_cask "superwhisper"
 
 log_info "Installing OpenCode CLI..."
