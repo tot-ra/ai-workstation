@@ -9,6 +9,7 @@ install_brew_cask "telegram"
 
 log_info "Installing terminal and development tools..."
 install_brew_cask "wezterm"
+install_brew_cask "ghostty"
 
 log_info "Installing IDEs"
 install_brew_cask "visual-studio-code"
