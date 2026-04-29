@@ -16,10 +16,10 @@ This is an opinionated dev setup for Mac and Ubuntu.
 - Keyboard -> Delay Until Repeat -> Short
 - Keyboard -> Text Input -> Disable most things
 - Keyboard -> Accessibility -> Disable VoiceOver
-- Control Center
+- Control Center (aka Menu Bar)
     - Sound -> Always Show in Menu Bar
     - Battery -> Show Percentage
-    - Date -> Display time with seconds
+    - Clock(Date) -> Display time with seconds
     - Weather -> Show in menu
 
 ### TMux setup
