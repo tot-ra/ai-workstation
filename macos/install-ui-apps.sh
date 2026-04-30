@@ -49,6 +49,7 @@ brew install --cask nikitabobko/tap/aerospace
 log_info "Installing extra development tools..."
 install_brew_package "bruno"
 install_brew_cask "cyberduck"
+install_brew_cask "dbeaver-community"
 
 log_info "Installing remote access tools..."
 install_brew_cask "vnc-viewer"
