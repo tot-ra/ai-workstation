@@ -5,7 +5,17 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 log_info "Starting AI tools installation..."
 
+# claude
+curl -fsSL https://claude.ai/install.sh | bash
+
+# codex
 install_brew_cask "codex-app"
+
+# brute
+curl -fsSL https://raw.githubusercontent.com/A2gent/brute/main/install-from-github.sh | bash
+
+# cline
+npm install -g cline
 
 install_brew_cask "superwhisper"
 
