@@ -61,7 +61,7 @@ ln -s ~/git/ai-workstation/.config/nvim ~/.config/nvim
     - Battery -> Show Percentage
     - Clock(Date) -> Display time with seconds
     - Weather -> Show in menu
-
+- Deck & Dock -> Hot Corners -> remove notes from bottom-right corner
 
 
 ### TMux setup
