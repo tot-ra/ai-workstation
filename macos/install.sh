@@ -33,6 +33,7 @@ echo "Installing core components..."
 "$SCRIPT_DIR/install-git.sh"
 "$SCRIPT_DIR/install-go.sh"
 "$SCRIPT_DIR/install-go-tools.sh"
+"$SCRIPT_DIR/install-mise.sh"
 
 "$SCRIPT_DIR/install-cli.sh"
 "$SCRIPT_DIR/install-nvim-tmux.sh"

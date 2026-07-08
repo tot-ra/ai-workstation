@@ -41,6 +41,8 @@ ln -s ~/git/ai-workstation/.config/nvim ~/.config/nvim
 
 ```
 
+The macOS installer also installs `mise`, activates it from `~/.zshrc`, and installs `fnox` as a global mise tool so encrypted project secrets are available in new shells.
+
 
 ### Setup MacOS settings
 
@@ -561,4 +563,3 @@ tail -f ~/.workstation-logs/install-*.log
 # Check brew services
 brew services list
 ```
-

@@ -32,6 +32,7 @@ eval "$(zoxide init zsh)"
 alias o="opencode"
 alias n="nvim"
 alias k="kubectl"
+alias cc="claude --allow-dangerously-skip-permissions"
 
 # name tmux sessions after the current directory
 alias tm='tmux new -s `basename $PWD`'
