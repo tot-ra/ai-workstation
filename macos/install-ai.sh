@@ -25,6 +25,11 @@ install_brew_package "anomalyco/tap/opencode"
 log_info "Installing sag (ElevenLabs TTS)..."
 install_brew_package "steipete/tap/sag"
 
+log_info "Installing ComfyUI (Comfy Desktop for local image/asset generation)..."
+# Official Comfy Desktop app (Node-based image/video generator), arm64 only.
+# Used for generating game art assets (sprites, textures, concept art) locally.
+install_brew_cask "comfy"
+
 log_info "Installing LM Studio..."
 install_brew_cask "lm-studio"
 
